@@ -74,23 +74,14 @@ $(document).ready(function() {
 			$item.click(function() {
 				var $libelle = $(this);
 				var $id = $libelle.next();
-				choisir($id.text(), $libelle.text());
+				choisir($id.text());
 			});
 		})
 	};
 	
-	var choisir = function(id, nom){
-		var $item = $('<li>').append(nom);
-		$item.click(function() {
-			$(this).next().remove();
-			$(this).remove();
-		});
-		$commande.append($item);
-		$commande.append($('<li class="hidden">').append(id));
-		$suggestions.empty();
-		$suggestions.hide();
-		$champ.val('');
-		$champ.focus();
+	var choisir = function(id){
+		 window.location = '/consultant/'+id+'/flux';
+		
 	};
 	
 	

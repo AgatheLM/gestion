@@ -6,18 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import fr.intervia.dao.FluxActiviteDAO;
-import fr.intervia.domaine.FluxActivite;
+import fr.intervia.dao.CompteMensuelDAO;
+import fr.intervia.domaine.CompteMensuel;
 
 @Component
-public class FluxActiviteConverter implements Converter<String, List<FluxActivite>> {
+public class FluxActiviteConverter implements Converter<String, List<CompteMensuel>> {
 
 	@Autowired
-	private FluxActiviteDAO faDAO;
+	private CompteMensuelDAO faDAO;
 
 	@Override
-	public 	List<FluxActivite> convert(String nom) {
-		List<FluxActivite> fa = faDAO.findByNom(nom);
+	public 	List<CompteMensuel> convert(String code) {
+		List<CompteMensuel> fa = faDAO.findByCode(code);
 		return fa;
 	}
 

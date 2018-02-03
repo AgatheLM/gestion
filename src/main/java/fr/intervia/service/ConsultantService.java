@@ -1,10 +1,12 @@
 package fr.intervia.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import fr.intervia.dao.ConsultantDAO;
 import fr.intervia.domaine.Consultant;
 
+@Component
 public class ConsultantService {
 
 	@Autowired

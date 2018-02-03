@@ -19,7 +19,7 @@
 				<input id="champ-recherche" type="text" placeholder="Rechercher un consultant" autocomplete="off" /><br/>
 				<ul id="suggestions"></ul>				
 			</div>
-		<button id="bouton-afficher">Afficher</button>
+		</div>
 		<h1>Liste des consultants</h1>
 		<c:if test="${not empty nouveauConsultant}">
 			<p class="success">Le consultant <c:out value="${nouveauConsultant.nom}" /> a été créé avec succès.</p>

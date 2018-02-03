@@ -10,13 +10,11 @@ import javax.sql.DataSource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 
 import fr.intervia.domaine.Consultant;
@@ -77,7 +75,7 @@ public class ConsultantDAO extends JdbcDaoSupport{
 
 	public void insert(Consultant consultant) {
 		template.update(SQL_INSERT, new Object[] {
-			consultant.getCode_consultant(),
+			consultant.getCodeConsultant(),
 			consultant.getNom(),
 			consultant.getPrenom(),
 			consultant.getStatut().getCode(),
@@ -86,7 +84,7 @@ public class ConsultantDAO extends JdbcDaoSupport{
 
 	public void update(Consultant consultant) {
 		template.update(SQL_UPDATE, new Object[] {
-			consultant.getCode_consultant(),
+			consultant.getCodeConsultant(),
 			consultant.getNom(),
 			consultant.getPrenom(),
 			consultant.getStatut().getCode(),
@@ -108,11 +106,15 @@ public class ConsultantDAO extends JdbcDaoSupport{
 		@Override
 		public Consultant mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Consultant consultant = new Consultant();
-			consultant.setCode_consultant(rs.getString("code_consultant"));
+			consultant.setCodeConsultant(rs.getString("code_consultant"));
 			consultant.setId(rs.getInt("id"));
 			consultant.setNom(rs.getString("nom"));
 			consultant.setPrenom(rs.getString("prenom"));
+			consultant.setClient(rs.getString("client"));
+			consultant.setSociete(rs.getString("societe"));
 			consultant.setStatut(Statut.of(rs.getString("statut")));
+			consultant.setDateAdhesion(rs.getDate("date_adhesion"));
+			consultant.setDateFinAdhesion(rs.getDate("date_fin_adhesion"));
 			return consultant;
 		}
 

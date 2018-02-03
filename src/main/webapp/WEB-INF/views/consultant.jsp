@@ -17,7 +17,7 @@
 		<br />
 		<strong>Consultant n<sup>o</sup> ${consultant.id}</strong>
 		<ul>
-			<li><label>Code :</label> ${consultant.code_consultant}</li>
+			<li><label>Code :</label> ${consultant.codeConsultant}</li>
 			<li><label>Nom :</label> ${consultant.nom}</li>
 			<li><label>Prenom :</label> ${consultant.prenom}</li>
 			<li><label>Etat : </label> ${consultant.statut}</li>

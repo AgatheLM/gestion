@@ -1,0 +1,6 @@
+127.0.0.1 - - [03/Feb/2018:13:46:15 +0100] "GET /accueil HTTP/1.1" 200 188 http-bio-80-exec-1 724
+127.0.0.1 - - [03/Feb/2018:13:46:15 +0100] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-80-exec-3 5
+127.0.0.1 - - [03/Feb/2018:13:46:18 +0100] "GET /consultants;jsessionid=61C59CB1EAFF7EF0BD5ED6D238230F00 HTTP/1.1" 200 19059 http-bio-80-exec-4 209
+127.0.0.1 - - [03/Feb/2018:13:46:18 +0100] "GET /static/css/application.css HTTP/1.1" 304 - http-bio-80-exec-5 6
+127.0.0.1 - - [03/Feb/2018:13:46:18 +0100] "GET /static/js/recherche.js HTTP/1.1" 304 - http-bio-80-exec-2 11
+127.0.0.1 - - [03/Feb/2018:13:46:21 +0100] "GET /consultant/5/flux HTTP/1.1" 200 5925 http-bio-80-exec-7 593

@@ -1,16 +1,43 @@
 package fr.intervia.domaine;
 
+import java.util.Date;
+
 public class Consultant {
 	private int id;
 	private String nom;
 	private String prenom;
-	private String code_consultant;
-	public String getCode_consultant() {
-		return code_consultant;
+	private String codeConsultant;
+	private Date dateAdhesion;
+	private Date dateFinAdhesion;
+	private String client;
+	private String societe;
+	private Statut statut;
+	
+	public String getSociete() {
+		return societe;
 	}
 
-	public void setCode_consultant(String code_consultant) {
-		this.code_consultant = code_consultant;
+	public void setSociete(String societe) {
+		this.societe = societe;
+	}
+
+
+
+	
+	public Date getDateFinAdhesion() {
+		return dateFinAdhesion;
+	}
+
+	public void setDateFinAdhesion(Date dateFinAdhesion) {
+		this.dateFinAdhesion = dateFinAdhesion;
+	}
+
+	public String getCodeConsultant() {
+		return codeConsultant;
+	}
+
+	public void setCodeConsultant(String code_consultant) {
+		this.codeConsultant = code_consultant;
 	}
 
 	public String getClient() {
@@ -22,22 +49,32 @@ public class Consultant {
 	}
 
 
-	private Statut statut;
-	private String client;
+
+
 	public Consultant() {
 		super();
 	}
 
-	public Consultant(int id, String code_consultant, String nom, String prenom, Statut statut, String client) {
-		super();
-		this.code_consultant=code_consultant;
+	public Consultant(int id, String code_consultant, String nom, String prenom, Statut statut, String client, Date dateDeb, Date dateFin, String societe) {
+		this.codeConsultant=code_consultant;
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.statut = statut;
 		this.client= client;
+		this.societe= societe;
+		this.dateAdhesion=dateDeb;
+		this.dateFinAdhesion=dateFin;
 	}
 
+
+	public Date getDateAdhesion() {
+		return dateAdhesion;
+	}
+
+	public void setDateAdhesion(Date dateAdhesion) {
+		this.dateAdhesion = dateAdhesion;
+	}
 
 	public int getId() {
 		return id;
@@ -71,6 +108,7 @@ public class Consultant {
 		this.statut = statut;
 	}
 	
+
 	
 	public enum Statut {
 
